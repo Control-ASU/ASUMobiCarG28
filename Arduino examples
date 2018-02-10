@@ -1,4 +1,5 @@
 //Bassem Ossama Wadeea
+//Example 1
 #define LED 13
 #define DT 1000
 void setup() {
@@ -13,3 +14,33 @@ void loop() {
   delay(2*DT);
 
 }
+//Example 2
+  float newValue = 1.1 ;
+void setup ()
+{
+  Serial.begin(9600);
+}
+void loop ()
+{
+  newValue = newValue - 0.1 ;
+  if (newValue == 0)
+  {
+    Serial.println("The new Value = ZERO" );
+    exit(0);
+  }
+  else if(newValue < .0001)
+  {
+    Serial.println("The new Value is close enough to zero");
+    delay(3000);
+    exit(0);
+  }
+  
+  else
+  {
+    Serial.println(newValue);
+   
+  }
+  delay(1000);
+}
+
+
