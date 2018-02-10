@@ -43,5 +43,27 @@ void loop ()
   }
   delay(1000);
 }
+//andro morcos nagib 
+//example 3
+int ledpin =13;
+int buttonpin =2;
+int buttonstate =0;
+void setup() {
+  // put your setup code here, to run once:
+pinMode (ledpin ,OUTPUT );
+pinMode(buttonpin,INPUT);
+
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+buttonstate=digitalRead(buttonpin);
+if (buttonstate==HIGH)
+digitalWrite (ledpin,HIGH);
+if (buttonstate==LOW)
+digitalWrite (ledpin,LOW);
+//thank you :D 
+}
+
 
 
