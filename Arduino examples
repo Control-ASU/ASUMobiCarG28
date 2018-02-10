@@ -1,0 +1,15 @@
+//Bassem Ossama Wadeea
+#define LED 13
+#define DT 1000
+void setup() {
+  pinMode(LED,OUTPUT);
+  
+}
+
+void loop() {
+  digitalWrite(LED,HIGH);
+  delay(DT);
+  digitalWrite(LED,LOW);
+  delay(2*DT);
+
+}
