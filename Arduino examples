@@ -98,4 +98,31 @@ delay (2000);
 //thank you :D
 }
 
+//Bassem Ossama Wadeea
+//Example 5
+// video #5
+    int ledPin[] = {10 , 11 , 12 , 13} ; // the array that carries all the OutPut Pins (Showing Signals as lightening LEDs if High)
+    int inputPin[] = {2 , 3 , 4 , 5} ; // the array tha carries all the Input Pins (manual jumpers or push buttons or switches .... Vcc or Gnd)
+    
+void setup()
+  {
+      for(int i=0;i<4;i++) //i refers to index ...  this loop appears cause we have an array of pins....the condition is 4 cause the largest array index is xxxxx[3]
+      {
+        pinMode (ledPin[i],OUTPUT);
+        pinMode (inputPin[i],INPUT);
+        digitalWrite (inputPin[i] , HIGH); // Enable Pull down Resistors
+      }
+  }
+void loop()
+  {
+    for (int i=0;i<4;i++)
+      {
+        int Value ; // this variable will carry the input signal
+        Value = digitalRead(inputPin[i]) ;
+        digitalWrite (ledPin[i],Value);
+      }
+  }
+  
+  
+
 
