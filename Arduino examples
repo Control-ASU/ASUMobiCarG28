@@ -155,6 +155,30 @@ void turnLEDOff()
 
 }
 
+//Example 8
+//Peter Bassem Dawoud
+//this program blinks the on board LED as long as a push button is pressed.
+int LED = 13;
+int pushButton =0;
+void setup() {
+  // put your setup code here, to run once:
+  //first we set the pin 13 to be output.
+  pinMode(LED, OUTPUT);
+  //Then pin 0 to be input
+  pinMode(pushButton, INPUT);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  // this if statment checks if the butoon is pressed.
+  if (digitalRead(pushButton) == HIGH){
+    // Here we set it high for 1000 ms then low for other 1000 ms
+    digitalWrite(LED, HIGH);
+    delay(1000);
+    digitalWrite(LED, LOW);
+    delay(1000);
+  }
+}
 
   
 
