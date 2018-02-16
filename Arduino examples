@@ -219,6 +219,23 @@ else
   //thank you :D
 
 }
-  
+ //andro 
+ //ex 10 
+ int led=12;
+int ldr =13;
+
+
+void setup() {
+ pinMode (led,OUTPUT);
+ pinMode (ldr,INPUT);
+
+}
+
+void loop() {
+  int x =digitalRead (ldr);
+  digitalWrite (led,x );
+  //light sensor 
+  //thank you :D
+  }
 
 
