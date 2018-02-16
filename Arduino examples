@@ -261,4 +261,20 @@ void loop() {
   //motion sensor 
   //thank you :D
   }
-
+//andro ex 12 
+int xpin =A0;
+int ypin =A1 ;
+void setup() {
+  serial.begin (9600);
+}
+void loop() {
+  int x_value = analogRead (xpin );
+  int y_value =analogRead (ypin );
+  serial.print("x value =");
+  serial.println (x_value );
+  serial.print("yvalue =");
+  serial.println (y_value );
+delay(200);
+//accerleratoin sensor 
+//thank u :) 
+}
