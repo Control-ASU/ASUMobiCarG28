@@ -237,5 +237,28 @@ void loop() {
   //light sensor 
   //thank you :D
   }
+//andro 
+//ex 11
+int led=12;
+int sensorpin=13;
 
+
+void setup() {
+ pinMode (led,OUTPUT);
+serial.begin(9600);
+
+}
+
+void loop() {
+  int t =pulseIn (sensorpin,HIGH );
+  int x =t/58 ;
+  serial.println (x );
+  digitalWrite (led,HIGH );
+  delay (10*x);
+   digitalWrite (led,LOW );
+  delay (10*x);
+  delay (200);
+  //motion sensor 
+  //thank you :D
+  }
 
