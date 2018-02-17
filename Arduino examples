@@ -261,6 +261,7 @@ void loop() {
   //motion sensor 
   //thank you :D
   }
+  
 //andro ex 12 
 int xpin =A0;
 int ypin =A1 ;
@@ -277,4 +278,20 @@ void loop() {
 delay(200);
 //accerleratoin sensor 
 //thank u :) 
+}
+
+//Sara Romany Mansour
+//example 1
+const byte LED = 10;
+void setup() {
+  // put your setup code here, to run once:
+pinMode (LED , OUTPUT );
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+digitalWrite(LED,HIGH);
+delay(1000);
+digitalWrite(LED,LOW);
+delay(1000);
 }
