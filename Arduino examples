@@ -368,3 +368,24 @@ void loop() {
   delay(1000);
   digitalWrite(LED7,LOW);
 }
+
+//Vero Michel
+//example 16
+
+float v ;
+float k = 0 ;
+void setup() {
+  pinMode(A0,INPUT);
+  pinMode(3,OUTPUT);
+Serial.begin(9600);
+}
+
+void loop() {
+k = analogRead(A0);
+v = 0.00489*k;
+analogWrite(3,v);
+Serial.println(v);
+
+
+}
+
