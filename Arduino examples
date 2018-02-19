@@ -296,6 +296,7 @@ digitalWrite(LED,LOW);
 delay(1000);
 }
 //andro morcos  
+//example 14
 int motor =A0;
 void setup() {
   
@@ -314,4 +315,21 @@ for (int i=255;i>=255;i--)
  delay (20);
   }
 //thank u :)
+}
+
+//abanoub entesar
+//example 15
+
+#define LED 13
+#define T 2000
+
+void setup() {
+  pinMode(LED,OUTPUT);
+}
+
+void loop() {
+  digitalWrite(LED,HIGH);
+  delay(T/4);
+  digitalWrite(LED,LOW);
+  delay((3*T)/4);
 }
