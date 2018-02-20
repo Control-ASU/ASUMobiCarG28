@@ -370,7 +370,7 @@ void loop() {
 }
 
 //Vero Michel
-//example 16
+//example 17
 
 float v ;
 float k = 0 ;
