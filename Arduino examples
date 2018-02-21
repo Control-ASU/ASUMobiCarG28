@@ -429,7 +429,8 @@ void loop() {
 }
 
 
-
+//fady melad
+//example 19
 //جايلكم يا شوية بروجرامرز
 void setup() {
 pinMode (5, OUTPUT);
@@ -441,6 +442,8 @@ digitalWrite (5,LOW);
 delay (1500);
 }
 
+//fady melad
+//example 20
 //مش هارحم حد
 void setup() {
 pinMode (4, OUTPUT);
@@ -468,7 +471,8 @@ digitalWrite (7,HIGH);
 delay (1000);
 }
 
-
+//fady melad
+//example 21
 //Edeeelo Matr7amoosh .. LIGHT Glowing up and down EFFECT
 
 const int ledPin = 11;
@@ -492,3 +496,6 @@ void loop() {
   delay (5);
     }
 }
+
+
+
