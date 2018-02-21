@@ -468,3 +468,27 @@ digitalWrite (7,HIGH);
 delay (1000);
 }
 
+
+//Edeeelo Matr7amoosh .. LIGHT Glowing up and down EFFECT
+
+const int ledPin = 11;
+
+void setup() {
+pinMode (ledPin, OUTPUT);
+Serial.begin(9600);  
+  Serial.println("--- Start Serial Monitor SEND_RCVE ---");
+}
+
+void loop() {
+    int i=0;
+    for (i=0; i<255; i++)
+    {
+  analogWrite(ledPin , i);
+  delay (5);
+    }
+    for (i=255; i>0; i--)
+    {
+  analogWrite(ledPin , i);
+  delay (5);
+    }
+}
