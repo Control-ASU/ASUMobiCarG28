@@ -1,0 +1,23 @@
+//Sheet2 Q5
+const int sensorPin = A0;
+const int ledPin = 8;
+int DelayTime;
+
+void setup() {
+pinMode (ledPin, OUTPUT);
+Serial.begin(9600);  
+  Serial.println("--- Start Serial Monitor SEND_RCVE ---");
+}
+
+void loop() {
+  DelayTime = analogRead (sensorPin);
+    Serial.println(DelayTime);
+    int i;
+    for (i=2; i<12; i++)
+    {
+  digitalWrite(i , HIGH);
+  delay (DelayTime);
+  digitalWrite (i , LOW);
+delay (DelayTime);
+    }
+}
