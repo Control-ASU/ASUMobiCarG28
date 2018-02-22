@@ -1,0 +1,30 @@
+#define SWITCH 4
+int arr[6];
+int j=0;
+
+void setup() {
+pinMode(11,OUTPUT);
+pinMode(SWITCH,INPUT);
+
+}
+
+void loop() 
+{
+  
+  arr[0]=analogRead(A0);
+  arr[1]=analogRead(A1);
+  arr[2]=analogRead(A2);
+  arr[3]=analogRead(A3);
+  arr[4]=analogRead(A4);
+  arr[5]=analogRead(A5);
+   if( SWITCH == HIGH)
+    {
+      j+=(j+1)%6;
+    
+    }
+  digitalWrite(11,HIGH);
+    delay(arr[j]);
+  digitalWrite(11,LOW);
+    delay(2000);
+  
+  }
