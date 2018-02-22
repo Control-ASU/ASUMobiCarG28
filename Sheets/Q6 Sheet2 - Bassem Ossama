@@ -1,0 +1,30 @@
+void setup() {
+pinMode(2,OUTPUT); // 2 corresponding to A0
+pinMode(3,OUTPUT); // 3 corresponding to A1
+pinMode(4,OUTPUT); // 4 corresponding to A2
+}
+
+void loop() {
+
+  digitalWrite(2,LOW);
+  digitalWrite(3,LOW);
+  digitalWrite(4,LOW);
+   
+    int j = analogRead(A0);
+    int k = analogRead(A1);
+    int l = analogRead(A2);
+    if ( j>k )
+    {
+      if (j>l)
+      {
+        digitalWrite(2,HIGH);
+      }
+      else 
+        digitalWrite(4,HIGH);
+    }
+    else 
+        digitalWrite(3,HIGH);
+
+        delay(3000);
+ 
+}
