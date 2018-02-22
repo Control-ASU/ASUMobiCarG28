@@ -3,6 +3,7 @@
 God Bless YOU :) !
 
 Basic System Components
+
 Car mechanics kit.
 Arduino kit.
 Battery.
@@ -10,7 +11,9 @@ Bluetooth communication module.
 Sensors.
 Bluetooth Terminal Software in Computer or Mobile.
 
+
 Easy Driving Application
+
 User should press a button on car or submit special Bluetooth command to put the car in easy driving mode.
 User can control car movement using mobile.
 User can move the car forward, backward, left and right.
@@ -24,7 +27,9 @@ When the car placed over the track it should follow the line.
 The minimum requirements is to use simple closed track.
 Bonus, for complex tracks with crossing points and sharp curves of radius less than 25 cm.
 
+
 Competition
+
 Track very complex track (4m x 4m) in minimum time for maximum number of turns.
 Line tracking technique must be accurate, especially at sharp edges.
 Car should move fast and steering mechanism also must be very efficient.
@@ -32,7 +37,9 @@ Car battery should allow many turns, also, battery consumption should be minimiz
 Know that large battery, is heavy and may affect the speed, the maneuvering, and the tracking.
 10 degrees for accurate tracking. 10 degrees for speed. 10 degrees for number of turns.
 
+
 Accurate Movement Application
+
 User should press a button on car or submit special Bluetooth command to put the car in accurate movement mode.
 Use can order the car to move forward or backward for certain length (EX 40 cm).
 Use can order the car to move right with proper angle (EX 30 degree).
