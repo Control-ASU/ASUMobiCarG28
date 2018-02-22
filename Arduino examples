@@ -549,5 +549,20 @@ void loop() {
  
 }
 
+//Venice Atef
+//example 23
+
+void setup() {
+pinMode(6,OUTPUT);
+Serial.begin(9600);
+}
+
+void loop() {
+  int j = analogRead(A0) ; // sound sensor
+  j=(j/5);
+  analogWrite(6,j);
+  Serial.println(j);
+
+}
 
 
