@@ -1,0 +1,35 @@
+#include <math.h>
+bool arr[8];
+int dur;
+int bintodec(bool arr[])
+{
+  int sum=0;
+  
+  for(int j=0;j<8;j++)
+  {
+    sum=sum+pow(2*arr[j],j);
+  }
+  return sum;
+}
+void setup() {
+  // put your setup code here, to run once:
+for(int i = 2 ; i<10 ; i++)
+{
+  pinMode(i,INPUT);
+}
+pinMode(11,OUTPUT);
+
+}
+
+void loop()
+{
+for(int k=2;k<10;k++)
+{
+ arr[k-2]=digitalRead(k);
+}
+dur=bintodec(arr);
+digitalWrite(11,HIGH);
+delay(dur*1000);
+digitalWrite(11,LOW);
+delay(2000);
+}
