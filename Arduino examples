@@ -558,14 +558,15 @@ Serial.begin(9600);
 }
 
 void loop() {
-  int j = analogRead(A0) ; // sound sensor
+  int j = analogRead(A0) ;
   j=(j/5);
   analogWrite(6,j);
   Serial.println(j);
 
 }
+
 //Fady Melad
-//MotorSpeedControl
+//Example 24 MotorSpeedControl
 
 int motorPin = 10;
 void setup()
