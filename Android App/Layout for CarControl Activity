@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/backwardButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="12dp"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/backward_button"
+            tools:layout_editor_absoluteX="157dp"
+            tools:layout_editor_absoluteY="413dp" />
+
+        <ImageButton
+            android:id="@+id/rightBackwarButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/LeftBackwardButton"
+            android:layout_marginStart="15dp"
+            android:layout_toEndOf="@+id/backwardButton"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/backwardright_button"
+            tools:layout_editor_absoluteX="253dp"
+            tools:layout_editor_absoluteY="413dp" />
+
+        <ImageButton
+            android:id="@+id/forwardButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/RightForwardButton"
+            android:layout_alignLeft="@+id/backwardButton"
+            android:layout_toStartOf="@+id/rightBackwarButton"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/forward_button"
+            tools:layout_editor_absoluteX="164dp"
+            tools:layout_editor_absoluteY="272dp" />
+
+        <ImageButton
+            android:id="@+id/LeftForwardButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/LeftButton"
+            android:layout_alignTop="@+id/RightForwardButton"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/forwardleft_button"
+            tools:layout_editor_absoluteX="67dp" />
+
+        <ImageButton
+            android:id="@+id/LeftButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/RightButton"
+            android:layout_alignTop="@+id/RightButton"
+            android:layout_marginEnd="14dp"
+            android:layout_toStartOf="@+id/backwardButton"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/left_button"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="53dp" />
+
+        <ImageButton
+            android:id="@+id/RightForwardButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/rightBackwarButton"
+            android:layout_below="@+id/radioGroup2"
+            android:layout_marginTop="23dp"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/forwardright_button"
+            tools:layout_editor_absoluteX="249dp" />
+
+        <ImageButton
+            android:id="@+id/LeftBackwardButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/LeftButton"
+            android:layout_alignTop="@+id/backwardButton"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/backwardleft_button"
+            tools:ignore="MissingConstraints" />
