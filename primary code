@@ -1,7 +1,14 @@
+#define TRIG_PIN A4 
+#define ECHO_PIN A5 
+#define MAX_DISTANCE 200 
+NewPing sonar(TRIG_PIN, ECHO_PIN, MAX_DISTANCE); 
+Servo myservo;   
+int distance = 100;
+
 
 #define ENA_m1 5        // Enable/speed motor Front Right 
-#define ENB_m1 6        // Enable/speed motor Back Right
-#define ENA_m2 10       // Enable/speed motor Front Left
+#define ENB_m1 5        // Enable/speed motor Back Right
+#define ENA_m2 11      // Enable/speed motor Front Left
 #define ENB_m2 11       // Enable/speed motor Back Left
 
 #define IN_11  2    		// L298N #1 in 1 motor Front Right
@@ -20,7 +27,13 @@ int speed_Coeff = 4;
 
 
 void setup() {  
-   
+
+   myservo.attach(10);  
+  myservo.write(115); //mid point 
+  delay(2000);
+  distance = readPing();
+  delay(100);
+  
 	  pinMode(ENA_m1, OUTPUT);
   	pinMode(ENB_m1, OUTPUT);
 	  pinMode(ENA_m2, OUTPUT);
@@ -246,6 +259,43 @@ void stopRobot(){
   
   }
   
+  
+int lookRight()
+{
+    myservo.write(50); 
+    delay(500);
+    int distance = readPing();
+    delay(100);
+    myservo.write(115); 
+    return distance;
+}
+
+
+int lookLeft()
+{
+    myservo.write(170); 
+    delay(500);
+    int distance = readPing();
+    delay(100);
+    myservo.write(115); 
+    return distance;
+    delay(100);
+}
+  
+  int readPing() { 
+  delay(70);
+  int cm = sonar.ping_cm();
+  if(cm==0)
+  {
+    cm = 250;
+  }
+  return cm;
+}
+
+  
+  
+  
+  
 void loop(){
   
 if (Serial.available() > 0) {
@@ -277,4 +327,54 @@ case 'q':speedCar = 255;break;
 
 }
 }
+int distanceR = 0;
+ int distanceL =  0;
+
+   if(distance<=20)
+   {
+      stopRobot();
+      delay(100);
+      goBack();
+      delay (200);
+      stopRobot();
+      delay (150);
+  distanceR = lookRight();
+  delay(100);
+  distanceL = lookLeft();
+  delay(100);
+     if(distanceR>distanceL)
+     {
+          goRight();
+          stopRobot();
+     }
+     if (distanceL>distanceR )
+     {
+      goLeft ();
+      stopRobot();
+     }
+     
+if (distanceL ==distanceR)
+{
+  //rotate b3d kdaa tkml :)
 }
+  
+  
+  goAhead();
+distance = readPing();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
