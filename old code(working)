@@ -1,0 +1,154 @@
+#include <SoftwareSerial.h>
+
+#define ENA 9
+#define IN1 4
+#define IN2 12
+#define ENB 10
+#define IN3 13 
+#define IN4 7
+#define TX 3
+#define RX 2
+
+SoftwareSerial BT(TX,RX);
+
+void fw();
+void bw();
+void left();
+void right();
+void Stop();
+void slowfw();
+void slowbw();
+void slowright();
+void slowleft();
+
+void setup() {
+  // put your setup code here, to run once:
+  TCCR1B = (TCCR1B & 0b11111000) | 0x04;
+  BT.begin(9600);
+  Serial.begin(9600);
+pinMode(IN2,OUTPUT);
+pinMode(IN1,OUTPUT);
+pinMode(ENA,OUTPUT);
+pinMode(IN3,OUTPUT);
+pinMode(IN4,OUTPUT);
+pinMode(ENB,OUTPUT);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  if(BT.available()){
+    char input = BT.read();
+    Serial.println(input);
+    switch (input){
+      case '1':
+        fw();
+        break;
+      case '2':
+        bw();
+        break;
+      case '3':
+        left();
+        break;
+      case '4':
+        right();
+        break;
+      case '0':
+        Stop();
+        break;  
+        case '7':
+        slowfw();
+        break;    
+        case '9' :
+        slowbw();
+        break;
+        case 'A' :
+        slowright();
+        break;
+        case '8' :
+        slowleft();
+        break;
+    }
+  }
+}
+
+void bw(){
+ digitalWrite(IN2,LOW);
+digitalWrite(IN1,HIGH);
+analogWrite(ENA,255);
+digitalWrite(IN3,HIGH);
+digitalWrite(IN4,LOW);
+analogWrite(ENB,255);
+}
+
+
+void fw(){
+digitalWrite(IN2,HIGH);
+digitalWrite(IN1,LOW);
+analogWrite(ENA,255);
+digitalWrite(IN3,LOW);
+digitalWrite(IN4,HIGH);
+analogWrite(ENB,255);
+}
+
+void left(){
+digitalWrite(IN2,HIGH);
+digitalWrite(IN1,LOW);
+analogWrite(ENA,155);
+digitalWrite(IN3,HIGH);
+digitalWrite(IN4,LOW);
+analogWrite(ENB,0);
+}
+
+void right(){
+digitalWrite(IN2,HIGH);
+digitalWrite(IN1,LOW);
+analogWrite(ENA,0);
+digitalWrite(IN3,LOW);
+digitalWrite(IN4,HIGH);
+analogWrite(ENB,155);
+}
+
+void Stop(){
+digitalWrite(IN2,HIGH);
+digitalWrite(IN1,LOW);
+analogWrite(ENA,0);
+digitalWrite(IN3,HIGH);
+digitalWrite(IN4,LOW);
+analogWrite(ENB,0);
+}
+void slowfw()
+{
+digitalWrite(IN2,HIGH);
+digitalWrite(IN1,LOW);
+analogWrite(ENA,100);
+digitalWrite(IN3,LOW);
+digitalWrite(IN4,HIGH);
+analogWrite(ENB,100);
+}
+void slowbw(){
+ digitalWrite(IN2,LOW);
+digitalWrite(IN1,HIGH);
+analogWrite(ENA,100);
+digitalWrite(IN3,HIGH);
+digitalWrite(IN4,LOW);
+analogWrite(ENB,100);
+}
+void slowright(){
+ digitalWrite(IN2,LOW);
+digitalWrite(IN1,HIGH);
+analogWrite(ENA,0);
+digitalWrite(IN3,HIGH);
+digitalWrite(IN4,LOW);
+analogWrite(ENB,100);
+}
+void slowleft()
+{
+
+   digitalWrite(IN2,LOW);
+digitalWrite(IN1,HIGH);
+analogWrite(ENA,100);
+digitalWrite(IN3,LOW);
+digitalWrite(IN4,HIGH);
+analogWrite(ENB,0);
+}
+
