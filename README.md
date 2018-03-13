@@ -1,5 +1,6 @@
 # ASUMobiCarG28
 # NB !!!! Old.mp4 is the video of the working car for now !!!!
+# the updated one will work after the mid term exams IN SHAA ALLAH
 God Bless YOU :) !
 
 Basic System Components
