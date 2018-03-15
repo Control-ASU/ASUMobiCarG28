@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="asumobicarg28.carcontrolproject.CarControlActivity">
+
+    <RelativeLayout
+        android:id="@+id/relativelayout2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/control_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <ImageButton
+            android:id="@+id/forwardLeftButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/LeftButton"
+            android:layout_alignEnd="@+id/LeftButton"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/forwardleft_button" />
+
+        <ImageButton
+            android:id="@+id/DiscconectButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/disconnect_button" />
+
+        <ImageButton
+            android:id="@+id/ForwardButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/LeftButton"
+            android:layout_toEndOf="@+id/forwardLeftButton"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/forward_button" />
+
+        <ImageButton
+            android:id="@+id/BackwardButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/LeftButton"
+            android:layout_toEndOf="@+id/BackwardLeftButton"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/backward_button" />
+
+        <ImageButton
+            android:id="@+id/RightButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/BackwardRightButton"
+            android:layout_alignStart="@+id/ForwardRightButton"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/right_button" />
+
+        <ImageButton
+            android:id="@+id/LeftButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/SpeedSelector"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/left_button" />
+
+        <ImageButton
+            android:id="@+id/ForwardRightButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/forwardLeftButton"
+            android:layout_toEndOf="@+id/ForwardButton"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/forwardright_button" />
+
+        <ImageButton
+            android:id="@+id/BackwardLeftButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/LeftButton"
+            android:layout_below="@+id/LeftButton"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/backwardleft_button" />
+
+        <ImageButton
+            android:id="@+id/BackwardRightButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/BackwardButton"
+            android:layout_toEndOf="@+id/BackwardButton"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/backwardright_button" />
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="11dp"
+            android:id="@+id/SpeedSelector">
+
+            <RadioButton
+                android:id="@+id/LowSpeed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Low Speed"
+                android:textAllCaps="true"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="20sp"
+                android:textStyle="bold|italic" />
+
+            <RadioButton
+                android:id="@+id/MediamSpeed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Medium Speed"
+                android:textAllCaps="true"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="20sp"
+                android:textStyle="bold|italic" />
+
+            <RadioButton
+                android:id="@+id/HighSpeed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="High Speed"
+                android:textAllCaps="true"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="20sp"
+                android:textStyle="bold|italic" />
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/ModeSelector"
+            android:layout_width="120dp"
+            android:layout_height="200dp"
+            android:layout_alignTop="@+id/RightButton"
+            android:layout_toEndOf="@+id/RightButton">
+
+            <RadioButton
+                android:id="@+id/BluetoothMode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Bluetooth'"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                android:textStyle="bold|italic" />
+
+            <RadioButton
+                android:id="@+id/LineTrackingMode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Line Tracking"
+                android:textSize="16sp"
+                android:textStyle="bold|italic" />
+
+            <RadioButton
+                android:id="@+id/MazeMode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Maze "
+                android:textSize="16sp"
+                android:textStyle="bold|italic" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/BackwardLeftButton"
+            android:layout_toStartOf="@+id/LeftButton"
+            android:text="Please Select Mode "
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="20sp"
+            android:textStyle="bold|italic" />
+
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>
