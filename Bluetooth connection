@@ -1,0 +1,20 @@
+ // Bluetooth connection final code 
+    BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+    BluetoothProfile.ServiceListener mProfileListener = new BluetoothProfile.ServiceListener() {
+        public void onServiceConnected(int profile, BluetoothProfile proxy) {
+            Time today = new Time(Time.getCurrentTimezone());
+            today.setToNow();
+            if (profile == BluetoothProfile.HEADSET) {
+                mBluetoothHeadset = (BluetoothHeadset) proxy;
+                LogginUtil.logString("BluetoothApp", "Headset event called at " + today.format("%k:%M:%S") + " - " + profile);
+            } else {
+                LogginUtil.logString("BluetoothApp", "Other event called at " + today.format("%k:%M:%S") + " - " + profile);
+            }     }
+        public void onServiceDisconnected(int profile) {
+            if (profile == BluetoothProfile.HEADSET) {
+                mBluetoothHeadset = null;
+                Time today = new Time(Time.getCurrentTimezone());
+                today.setToNow();
+                LogginUtil.logString("BluetoothApp", "Headset event disconnected at " + today.format("%k:%M:%S"));
+            }  }   };
+    mBluetoothAdapter.getProfileProxy(getApplicationContext(), mProfileListener, BluetoothProfile.HEADSET);
